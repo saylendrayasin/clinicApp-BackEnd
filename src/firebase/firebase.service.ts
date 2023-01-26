@@ -19,6 +19,10 @@ export class FirebaseService {
       storageBucket: configService.get<string>('storageBucket'),
     });
 
+    if (this.app) {
+      console.log('Firebase app initialized successfully');
+    }
+
     this.auth = getAuth(this.app);
   }
 }
